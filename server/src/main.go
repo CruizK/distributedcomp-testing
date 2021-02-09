@@ -17,7 +17,7 @@ func main() {
 	router := httprouter.New()
 	router.GET("/client/connect", handleClientConnection)
 
-	l, err := net.Listen("tcp", "localhost:4040")
+	l, err := net.Listen("tcp", ":4040")
 
 	if err != nil {
 		fmt.Println("Error listening:", err.Error())
