@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"bufio"
@@ -9,6 +9,15 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 )
+
+const (
+	MSG = iota
+	CMD = iota
+)
+
+type Packet struct {
+	msg_type int32
+}
 
 func handleClientConnection(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 
